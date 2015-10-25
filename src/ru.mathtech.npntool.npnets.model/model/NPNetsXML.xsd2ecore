@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="npnets.ecore#//npnets" outputs="NPNetsXML.xsd#/">
+  <nested inputs="npnets.ecore#//npnets" outputs="NPNetsXML.xsd#/">
+    <nested inputs="npnets.ecore#//npnets/ESynchronizationKind" outputs="NPNetsXML.xsd#//ESynchronizationKind;XSDSimpleTypeDefinition">
+      <nested inputs="npnets.ecore#//npnets/ESynchronizationKind/VerticalSynchronization"
+          outputs="NPNetsXML.xsd#//ESynchronizationKind;XSDSimpleTypeDefinition/XSDEnumerationFacet"/>
+      <nested inputs="npnets.ecore#//npnets/ESynchronizationKind/HorizontalSynchronization"
+          outputs="NPNetsXML.xsd#//ESynchronizationKind;XSDSimpleTypeDefinition/XSDEnumerationFacet=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npnets/NPnet" outputs="NPNetsXML.xsd#//NPnet;XSDComplexTypeDefinition">
+      <nested inputs="npnets.ecore#//npnets/NPnet/netSystem" outputs="NPNetsXML.xsd#//NPnet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//npnets/NPnet/typeElementNet" outputs="NPNetsXML.xsd#//NPnet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="npnets.ecore#//npnets/NPnet/typeAtomic" outputs="NPNetsXML.xsd#//NPnet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+      <nested inputs="npnets.ecore#//npnets/NPnet/netConstants" outputs="NPNetsXML.xsd#//NPnet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"/>
+      <nested inputs="npnets.ecore#//npnets/NPnet/synchronizations" outputs="NPNetsXML.xsd#//NPnet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npnets/NPnet" outputs="NPNetsXML.xsd#//NPnet;XSDElementDeclaration"/>
+    <nested inputs="npnets.ecore#//npnets/NPnetMarked" outputs="NPNetsXML.xsd#//NPnetMarked;XSDComplexTypeDefinition=1">
+      <nested inputs="npnets.ecore#//npnets/NPnetMarked/net" outputs="NPNetsXML.xsd#//NPnetMarked;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//npnets/NPnetMarked/marking" outputs="NPNetsXML.xsd#//NPnetMarked;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="npnets.ecore#//npnets/NPnetMarked/diagramNetSystem" outputs="NPNetsXML.xsd#//NPnetMarked;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npnets/NPnetMarked" outputs="NPNetsXML.xsd#//NPnetMarked;XSDElementDeclaration=1"/>
+    <nested inputs="npnets.ecore#//npnets/Synchronization" outputs="NPNetsXML.xsd#//Synchronization;XSDComplexTypeDefinition=2">
+      <nested inputs="npnets.ecore#//npnets/Synchronization/kind" outputs="NPNetsXML.xsd#//Synchronization;XSDComplexTypeDefinition=2/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npnets/Synchronization/key" outputs="NPNetsXML.xsd#//Synchronization;XSDComplexTypeDefinition=2/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//npnets/Synchronization/involved" outputs="NPNetsXML.xsd#//Synchronization;XSDComplexTypeDefinition=2/XSDAttributeUse=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npnets/Synchronization" outputs="NPNetsXML.xsd#//Synchronization;XSDElementDeclaration=2"/>
+    <nested inputs="npnets.ecore#//npnets/TransitionSynchronized" outputs="NPNetsXML.xsd#//TransitionSynchronized;XSDComplexTypeDefinition=3">
+      <nested inputs="npnets.ecore#//npnets/TransitionSynchronized/synchronization"
+          outputs="NPNetsXML.xsd#//TransitionSynchronized;XSDComplexTypeDefinition=3/XSDAttributeUse"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npnets/TransitionSynchronized" outputs="NPNetsXML.xsd#//TransitionSynchronized;XSDElementDeclaration=3"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

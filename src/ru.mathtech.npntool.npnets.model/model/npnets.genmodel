@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ru.mathtech.npntool.npnets.model/src" editDirectory="/ru.mathtech.npntool.npnets.edit/src"
+    editorDirectory="/ru.mathtech.npntool.npnets.editor/src" modelPluginID="ru.mathtech.npntool.npnets.model"
+    templateDirectory="/ru.mathtech.npntool.npnets.model/templates" dynamicTemplates="true"
+    redirection="" modelName="npnets" modelPluginClass="ru.mathtech.npntool.npnets.model.npnetsModelPlugin"
+    editPluginClass="ru.mathtech.npntool.npnets.edit.npnetsEditPlugin" editorPluginClass="ru.mathtech.npntool.npnets.editor.npnetsEditorPlugin"
+    generateSchema="true" nonNLSMarkers="true" testsDirectory="/ru.mathtech.npntool.npnets.tests/src"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" providerRootExtendsClass="" editPluginID="ru.mathtech.npntool.npnets.edit"
+    editorPluginID="ru.mathtech.npntool.npnets.editor" testsPluginID="ru.mathtech.npntool.npnets.tests"
+    tableProviders="true" interfaceNamePattern="" classNamePattern="" operationReflection="true">
+  <foreignModel>npnets.ecore</foreignModel>
+  <genPackages prefix="HLN" basePackage="ru.mathtech.npntool.npnets" disposableProviderFactory="true"
+      generateModelWizard="false" ecorePackage="npnets.ecore#/">
+    <nestedGenPackages prefix="Marking" resource="XML" disposableProviderFactory="true"
+        generateExampleClass="false" generateModelWizard="false" extensibleProviderFactory="true"
+        contentTypeIdentifier="" ecorePackage="npnets.ecore#//marking">
+      <genClasses ecoreClass="npnets.ecore#//marking/Marking">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//marking/Marking/map"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//marking/PlaceMarking">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//marking/PlaceMarking/place"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//marking/PlaceMarking/marking"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//marking/HighLevelPetriNetMarked">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//marking/HighLevelPetriNetMarked/net"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//marking/HighLevelPetriNetMarked/marking"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="TokenTypes" resource="XML" disposableProviderFactory="true"
+        generateModelWizard="false" ecorePackage="npnets.ecore#//tokentypes">
+      <genClasses image="false" ecoreClass="npnets.ecore#//tokentypes/TokenType"/>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/TokenTypeAtomic">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenTypeAtomic/instance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenTypeAtomic/atom"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/TokenTypeElementNet">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenTypeElementNet/elementNetMarkeds"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenTypeElementNet/net"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenTypeElementNet/tokenNets"/>
+        <genOperations ecoreOperation="npnets.ecore#//tokentypes/TokenTypeElementNet/getInstanceByID">
+          <genParameters ecoreParameter="npnets.ecore#//tokentypes/TokenTypeElementNet/getInstanceByID/id"/>
+        </genOperations>
+        <genOperations ecoreOperation="npnets.ecore#//tokentypes/TokenTypeElementNet/createInstance"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//tokentypes/Token">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/Token/attribute"/>
+        <genOperations ecoreOperation="npnets.ecore#//tokentypes/Token/getType"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/TokenAtomic">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenAtomic/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenAtomic/value"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/TokenNet">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenNet/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/TokenNet/value"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/TokenAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokentypes/TokenAttribute/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokentypes/TokenAttribute/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokentypes/TokenAttribute/value"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/ElementNetMarked">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/ElementNetMarked/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokentypes/ElementNetMarked/marking"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokentypes/Atom"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="TokenExpressions" resource="XML" disposableProviderFactory="true"
+        generateModelWizard="false" ecorePackage="npnets.ecore#//tokenexpressions">
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/TokenWeight">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenWeight/token"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokenexpressions/TokenWeight/weight"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/TokenMultisetExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenMultisetExpression/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenMultisetExpression/value"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/TokenMultiSet">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenMultiSet/weight"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenMultiSet/type"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/Variable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokenexpressions/Variable/name"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/Variable/context"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/TokenVariadicExpression">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenVariadicExpression/monoms"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenVariadicExpression/monomConstants"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/Monom">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/Monom/variable"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokenexpressions/Monom/power"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/TokenExpressionBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenExpressionBinding/expression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenExpressionBinding/bindingTokens"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/TokenBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenBinding/variable"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/TokenBinding/value"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/MonomConstant">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/MonomConstant/constant"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/MonomConstant/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//tokenexpressions/MonomConstant/power"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//tokenexpressions/NetConstant">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//tokenexpressions/NetConstant/binding"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="HLPN" resource="XML" disposableProviderFactory="true"
+        generateModelWizard="false" ecorePackage="npnets.ecore#//hlpn">
+      <genClasses ecoreClass="npnets.ecore#//hlpn/HighLevelPetriNet">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/HighLevelPetriNet/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/HighLevelPetriNet/arcs"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//hlpn/Place">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Place/outArcs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Place/inArcs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Place/type"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//hlpn/Transition">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Transition/inArcs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Transition/outArcs"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//hlpn/ArcPT">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ArcPT/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ArcPT/target"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ArcPT/inscription"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//hlpn/ArcTP">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ArcTP/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ArcTP/target"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ArcTP/inscription"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//hlpn/ContextVariable">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/ContextVariable/variables"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//hlpn/Node">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Node/net"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//hlpn/Arc">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//hlpn/Arc/net"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="NPNets" resource="XML" disposableProviderFactory="true"
+        interfacePackageSuffix="model" metaDataPackageSuffix="model" classPackageSuffix="model.impl"
+        utilityPackageSuffix="model.util" providerPackageSuffix="model.provider" presentationPackageSuffix="model.presentation"
+        testsPackageSuffix="model.tests" ecorePackage="npnets.ecore#//npnets">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="npnets.ecore#//npnets/ESynchronizationKind">
+        <genEnumLiterals ecoreEnumLiteral="npnets.ecore#//npnets/ESynchronizationKind/VerticalSynchronization"/>
+        <genEnumLiterals ecoreEnumLiteral="npnets.ecore#//npnets/ESynchronizationKind/HorizontalSynchronization"/>
+      </genEnums>
+      <genClasses ecoreClass="npnets.ecore#//npnets/NPnet">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnet/netSystem"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnet/typeElementNet"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnet/typeAtomic"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnet/netConstants"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnet/synchronizations"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npnets/NPnetMarked">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnetMarked/net"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnetMarked/marking"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npnets/NPnetMarked/diagramNetSystem"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npnets/Synchronization">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//npnets/Synchronization/kind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//npnets/Synchronization/key"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npnets/Synchronization/involved"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npnets/TransitionSynchronized">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npnets/TransitionSynchronized/synchronization"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Common" resource="XML" disposableProviderFactory="true"
+        generateModelWizard="false" ecorePackage="npnets.ecore#//common">
+      <genDataTypes ecoreDataType="npnets.ecore#//common/Rectangle"/>
+      <genDataTypes ecoreDataType="npnets.ecore#//common/Point"/>
+      <genClasses image="false" ecoreClass="npnets.ecore#//common/INetElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//common/INetElement/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//common/INetElement/comment"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//common/IEntityIdentifiable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//common/IEntityIdentifiable/uuid"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="NPNDiagrams" basePackage="ru.mathtech.npntool.npnets"
+        resource="XML" disposableProviderFactory="true" generateModelWizard="false"
+        ecorePackage="npnets.ecore#//npndiagrams">
+      <genClasses ecoreClass="npnets.ecore#//npndiagrams/NPNDiagramNPNMarked">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNDiagramNPNMarked/diagramNetSystem"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNDiagramNPNMarked/model"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npndiagrams/NPNDiagramNetSystem">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNDiagramNetSystem/model"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNDiagramNetSystem/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNDiagramNetSystem/arcs"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npndiagrams/NPNSymbolPlaceSN">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolPlaceSN/outArcs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolPlaceSN/inArcs"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npndiagrams/NPNSymbolTransitionSN">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolTransitionSN/outArcs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolTransitionSN/inArcs"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npndiagrams/NPNSymbolArcPTSN">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolArcPTSN/target"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolArcPTSN/source"/>
+      </genClasses>
+      <genClasses ecoreClass="npnets.ecore#//npndiagrams/NPNSymbolArcTPSN">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolArcTPSN/target"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolArcTPSN/source"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//npndiagrams/NPNSymbolNodeSN">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolNodeSN/diagram"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//npndiagrams/NPNSymbolNodeSN/constraints"/>
+        <genFeatures notify="false" createChild="false" propertyCategory="" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolNodeSN/model"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="npnets.ecore#//npndiagrams/NPNSymbolArcSN">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolArcSN/diagram"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference npnets.ecore#//npndiagrams/NPNSymbolArcSN/model"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute npnets.ecore#//npndiagrams/NPNSymbolArcSN/bendpoints"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

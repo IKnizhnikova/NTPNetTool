@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NPNtool auxiliary
+Bundle-SymbolicName: ru.mathtech.npntool
+Bundle-Version: 0.0.1
+Bundle-Activator: ru.mathtech.npntool.Activator
+Bundle-Vendor: Leonid Dworzanski
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.draw2d.geometry,
+ org.eclipse.emf.ecore
+Export-Package: ru.mathtech.npntool.content

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://mathtech.ru/npntool/nets/marking"
+            class="ru.mathtech.npntool.npnets.highlevelnets.marking.MarkingPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="marking"
+            class="ru.mathtech.npntool.npnets.highlevelnets.marking.util.MarkingResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://mathtech.ru/npntool/nets/tokentypes"
+            class="ru.mathtech.npntool.npnets.highlevelnets.tokentypes.TokenTypesPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="tokentypes"
+            class="ru.mathtech.npntool.npnets.highlevelnets.tokentypes.util.TokenTypesResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="mathtech.ru/npntool/tokenexpressions"
+            class="ru.mathtech.npntool.npnets.highlevelnets.tokenexpressions.TokenExpressionsPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="tokenexpressions"
+            class="ru.mathtech.npntool.npnets.highlevelnets.tokenexpressions.util.TokenExpressionsResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="mathtech.ru/npntool/hlpn"
+            class="ru.mathtech.npntool.npnets.highlevelnets.hlpn.HLPNPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="hlpn"
+            class="ru.mathtech.npntool.npnets.highlevelnets.hlpn.util.HLPNResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="mathtech.ru/npntool/npnets"
+            class="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.NPNetsPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="npnets"
+            class="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.util.NPNetsResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:/mathtech.ru/npntool/common"
+            class="ru.mathtech.npntool.npnets.highlevelnets.common.CommonPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="common"
+            class="ru.mathtech.npntool.npnets.highlevelnets.common.util.CommonResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:/mathtech.ru/npntool/npndiagrams"
+            class="ru.mathtech.npntool.npnets.npndiagrams.NPNDiagramsPackage"
+            genModel="model/npnets.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="npndiagrams"
+            class="ru.mathtech.npntool.npnets.npndiagrams.util.NPNDiagramsResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

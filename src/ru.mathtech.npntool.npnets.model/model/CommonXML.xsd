@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:common="http:/mathtech.ru/npntool/common" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:/mathtech.ru/npntool/common">
+  <xsd:complexType abstract="true" name="INetElement">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="comment" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="IEntityIdentifiable">
+    <xsd:attribute default="" name="uuid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+</xsd:schema>

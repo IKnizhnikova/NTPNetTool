@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="npnets.simulator.NPNGraphicalSimulator"
+            contributorClass="npnets.simulator.NPNActionBarContributor"
+            default="false"
+            extensions="npnets"
+            id="npnets.simulator.NpNetsSimulator"
+            name="NPNets simulator">
+      </editor>
+      <editor
+            class="npnets.simulator.editors.ElementNetEditorPart"
+            default="false"
+            id="ene"
+            name="element net editor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.views">
+        <view
+              class="npnets.simulator.editors.NPNGraphicalEditorTypeBind"
+              id="npnets.simulator.typeBinding"
+              name="Variable mapping"
+              restorable="true"/>
+        <view
+              class="npnets.simulator.editors.ElementNetEditorPart"
+              id="ene"
+              name="Element net editor"
+              restorable="true">
+        </view>
+</extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.debug.ui.category.run"
+            defaultHandler="npnets.simulator.handlers.NPNGraphicalSimulatorCMSimulateHandler"
+            id="npnets.simulator.simulate"
+            name="Simulate">
+      </command>
+      <command
+            categoryId="org.eclipse.debug.ui.category.run"
+            defaultHandler="npnets.simulator.handlers.NPNGraphicalSimulatorCMMakeStepHandler"
+            helpContextId="toggle_mark_occurrences_action_context"
+            id="npnets.simulator.MakeStep"
+            name="MakeStep">
+      </command>
+      <command
+            categoryId="org.eclipse.debug.ui.category.run"
+            defaultHandler="npnets.simulator.handlers.NPNGraphicalSimulatorCMUndoHandler"
+            helpContextId="toggle_mark_occurrences_action_context"
+            id="npnets.simulator.Undo"
+            name="Undo">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar ">
+         <toolbar
+               id="mainToolbar"
+               label="mainToolbar">
+            <command
+                  commandId="npnets.simulator.simulate"
+                  helpContextId="toggle_mark_occurrences_action_context"
+                  icon="icons/player_play_4230.png"
+                  label="Simulate"
+                  style="push"
+                  tooltip="Start Simulating">
+            </command>
+            <command
+                  commandId="npnets.simulator.MakeStep"
+                  icon="icons/player_end_8218.png"
+                  label="Make Step"
+                  style="push">
+            </command>
+            <command
+                  commandId="npnets.simulator.Undo"
+                  helpContextId="toggle_mark_occurrences_action_context"
+                  icon="icons/undo_6076.png"
+                  label="Undo step"
+                  style="push"
+                  tooltip="Undo previous step">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+
+</plugin>

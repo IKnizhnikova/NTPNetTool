@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:common="http:/mathtech.ru/npntool/common" xmlns:hlpn="mathtech.ru/npntool/hlpn" xmlns:tokenexpressions="mathtech.ru/npntool/tokenexpressions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="mathtech.ru/npntool/hlpn">
+  <xsd:import namespace="mathtech.ru/npntool/tokenexpressions" schemaLocation="tokenexpressions.xsd"/>
+  <xsd:import namespace="http:/mathtech.ru/npntool/common" schemaLocation="common.xsd"/>
+  <xsd:complexType name="HighLevelPetriNet">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="variables" type="tokenexpressions:Variable"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="nodes" type="hlpn:Node"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="arcs" type="hlpn:Arc"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="HighLevelPetriNet" type="hlpn:HighLevelPetriNet"/>
+  <xsd:complexType name="Place">
+    <xsd:complexContent>
+      <xsd:extension base="hlpn:Node">
+        <xsd:attribute name="outArcs" type="xsd:string"/>
+        <xsd:attribute name="inArcs" type="xsd:string"/>
+        <xsd:attribute name="type" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Place" type="hlpn:Place"/>
+  <xsd:complexType name="Transition">
+    <xsd:complexContent>
+      <xsd:extension base="hlpn:ContextVariable">
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="comment" type="xsd:string"/>
+        <xsd:attribute name="net" type="xsd:string"/>
+        <xsd:attribute name="inArcs" type="xsd:string"/>
+        <xsd:attribute name="outArcs" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Transition" type="hlpn:Transition"/>
+  <xsd:complexType name="ArcPT">
+    <xsd:complexContent>
+      <xsd:extension base="hlpn:Arc">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="inscription" type="tokenexpressions:TokenVariadicExpression"/>
+        </xsd:sequence>
+        <xsd:attribute name="source" type="xsd:string"/>
+        <xsd:attribute name="target" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ArcPT" type="hlpn:ArcPT"/>
+  <xsd:complexType name="ArcTP">
+    <xsd:complexContent>
+      <xsd:extension base="hlpn:Arc">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="inscription" type="tokenexpressions:TokenVariadicExpression"/>
+        </xsd:sequence>
+        <xsd:attribute name="source" type="xsd:string"/>
+        <xsd:attribute name="target" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ArcTP" type="hlpn:ArcTP"/>
+  <xsd:complexType abstract="true" name="ContextVariable">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="variables" type="tokenexpressions:Variable"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Node">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:attribute name="net" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Arc">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:attribute name="net" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

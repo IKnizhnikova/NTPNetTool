@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:common="http:/mathtech.ru/npntool/common" xmlns:hlpn="mathtech.ru/npntool/hlpn" xmlns:marking="http://mathtech.ru/npntool/nets/marking" xmlns:npndiagrams="http:/mathtech.ru/npntool/npndiagrams" xmlns:npnets="mathtech.ru/npntool/npnets" xmlns:tokenexpressions="mathtech.ru/npntool/tokenexpressions" xmlns:tokentypes="http://mathtech.ru/npntool/nets/tokentypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="mathtech.ru/npntool/npnets">
+  <xsd:import namespace="http:/mathtech.ru/npntool/npndiagrams" schemaLocation="npndiagrams.xsd"/>
+  <xsd:import namespace="http://mathtech.ru/npntool/nets/marking" schemaLocation="marking.xsd"/>
+  <xsd:import namespace="mathtech.ru/npntool/tokenexpressions" schemaLocation="tokenexpressions.xsd"/>
+  <xsd:import namespace="http://mathtech.ru/npntool/nets/tokentypes" schemaLocation="tokentypes.xsd"/>
+  <xsd:import namespace="mathtech.ru/npntool/hlpn" schemaLocation="hlpn.xsd"/>
+  <xsd:import namespace="http:/mathtech.ru/npntool/common" schemaLocation="common.xsd"/>
+  <xsd:simpleType name="ESynchronizationKind">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="VerticalSynchronization"/>
+      <xsd:enumeration value="HorizontalSynchronization"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="NPnet">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="netSystem" type="hlpn:HighLevelPetriNet"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeElementNet" type="tokentypes:TokenTypeElementNet"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="typeAtomic" type="tokentypes:TokenTypeAtomic"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="netConstants" type="tokenexpressions:NetConstant"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="synchronizations" type="npnets:Synchronization"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NPnet" type="npnets:NPnet"/>
+  <xsd:complexType name="NPnetMarked">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="net" type="npnets:NPnet"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="marking" type="marking:Marking"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="diagramNetSystem" type="npndiagrams:NPNDiagramNetSystem"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NPnetMarked" type="npnets:NPnetMarked"/>
+  <xsd:complexType name="Synchronization">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:attribute name="kind" type="npnets:ESynchronizationKind" use="required"/>
+        <xsd:attribute name="key" type="xsd:string" use="required"/>
+        <xsd:attribute name="involved" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Synchronization" type="npnets:Synchronization"/>
+  <xsd:complexType name="TransitionSynchronized">
+    <xsd:complexContent>
+      <xsd:extension base="hlpn:Transition">
+        <xsd:attribute name="synchronization" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TransitionSynchronized" type="npnets:TransitionSynchronized"/>
+</xsd:schema>

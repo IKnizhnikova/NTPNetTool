@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="npnets.ecore#//tokentypes" outputs="TokenTypesXML.xsd#/">
+  <nested inputs="npnets.ecore#//tokentypes" outputs="TokenTypesXML.xsd#/">
+    <nested inputs="npnets.ecore#//tokentypes/TokenType" outputs="TokenTypesXML.xsd#//TokenType;XSDComplexTypeDefinition"/>
+    <nested inputs="npnets.ecore#//tokentypes/TokenTypeAtomic" outputs="TokenTypesXML.xsd#//TokenTypeAtomic;XSDComplexTypeDefinition=1">
+      <nested inputs="npnets.ecore#//tokentypes/TokenTypeAtomic/instance" outputs="TokenTypesXML.xsd#//TokenTypeAtomic;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenTypeAtomic/atom" outputs="TokenTypesXML.xsd#//TokenTypeAtomic;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/TokenTypeAtomic" outputs="TokenTypesXML.xsd#//TokenTypeAtomic;XSDElementDeclaration"/>
+    <nested inputs="npnets.ecore#//tokentypes/TokenTypeElementNet" outputs="TokenTypesXML.xsd#//TokenTypeElementNet;XSDComplexTypeDefinition=2">
+      <nested inputs="npnets.ecore#//tokentypes/TokenTypeElementNet/elementNetMarkeds"
+          outputs="TokenTypesXML.xsd#//TokenTypeElementNet;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenTypeElementNet/net" outputs="TokenTypesXML.xsd#//TokenTypeElementNet;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenTypeElementNet/tokenNets" outputs="TokenTypesXML.xsd#//TokenTypeElementNet;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/TokenTypeElementNet" outputs="TokenTypesXML.xsd#//TokenTypeElementNet;XSDElementDeclaration=1"/>
+    <nested inputs="npnets.ecore#//tokentypes/Token" outputs="TokenTypesXML.xsd#//Token;XSDComplexTypeDefinition=3">
+      <nested inputs="npnets.ecore#//tokentypes/Token/attribute" outputs="TokenTypesXML.xsd#//Token;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/TokenAtomic" outputs="TokenTypesXML.xsd#//TokenAtomic;XSDComplexTypeDefinition=4">
+      <nested inputs="npnets.ecore#//tokentypes/TokenAtomic/type" outputs="TokenTypesXML.xsd#//TokenAtomic;XSDComplexTypeDefinition=4/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenAtomic/value" outputs="TokenTypesXML.xsd#//TokenAtomic;XSDComplexTypeDefinition=4/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/TokenAtomic" outputs="TokenTypesXML.xsd#//TokenAtomic;XSDElementDeclaration=2"/>
+    <nested inputs="npnets.ecore#//tokentypes/TokenNet" outputs="TokenTypesXML.xsd#//TokenNet;XSDComplexTypeDefinition=5">
+      <nested inputs="npnets.ecore#//tokentypes/TokenNet/type" outputs="TokenTypesXML.xsd#//TokenNet;XSDComplexTypeDefinition=5/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenNet/value" outputs="TokenTypesXML.xsd#//TokenNet;XSDComplexTypeDefinition=5/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/TokenNet" outputs="TokenTypesXML.xsd#//TokenNet;XSDElementDeclaration=3"/>
+    <nested inputs="npnets.ecore#//tokentypes/TokenAttribute" outputs="TokenTypesXML.xsd#//TokenAttribute;XSDComplexTypeDefinition=6">
+      <nested inputs="npnets.ecore#//tokentypes/TokenAttribute/type" outputs="TokenTypesXML.xsd#//TokenAttribute;XSDComplexTypeDefinition=6/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenAttribute/name" outputs="TokenTypesXML.xsd#//TokenAttribute;XSDComplexTypeDefinition=6/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//tokentypes/TokenAttribute/value" outputs="TokenTypesXML.xsd#//TokenAttribute;XSDComplexTypeDefinition=6/XSDAttributeUse=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/TokenAttribute" outputs="TokenTypesXML.xsd#//TokenAttribute;XSDElementDeclaration=4"/>
+    <nested inputs="npnets.ecore#//tokentypes/ElementNetMarked" outputs="TokenTypesXML.xsd#//ElementNetMarked;XSDComplexTypeDefinition=7">
+      <nested inputs="npnets.ecore#//tokentypes/ElementNetMarked/type" outputs="TokenTypesXML.xsd#//ElementNetMarked;XSDComplexTypeDefinition=7/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokentypes/ElementNetMarked/marking" outputs="TokenTypesXML.xsd#//ElementNetMarked;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokentypes/ElementNetMarked" outputs="TokenTypesXML.xsd#//ElementNetMarked;XSDElementDeclaration=5"/>
+    <nested inputs="npnets.ecore#//tokentypes/Atom" outputs="TokenTypesXML.xsd#//Atom;XSDComplexTypeDefinition=8"/>
+    <nested inputs="npnets.ecore#//tokentypes/Atom" outputs="TokenTypesXML.xsd#//Atom;XSDElementDeclaration=6"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

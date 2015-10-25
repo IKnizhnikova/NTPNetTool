@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="ru.mathtech.npntool.editor.NPNGraphicalEditor"
+            contributorClass="ru.mathtech.npntool.editor.NPNGraphicalEditorActionBarContributor"
+            default="true"
+            extensions="npnets"
+            id="ru.mathtech.npntool.editor.EditorGEFNPnets"
+            name="NP-nets editor">
+      </editor>
+   </extension>
+
+</plugin>

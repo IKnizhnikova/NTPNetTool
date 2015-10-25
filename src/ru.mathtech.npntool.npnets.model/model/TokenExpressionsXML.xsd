@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:common="http:/mathtech.ru/npntool/common" xmlns:tokenexpressions="mathtech.ru/npntool/tokenexpressions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="mathtech.ru/npntool/tokenexpressions">
+  <xsd:import namespace="http:/mathtech.ru/npntool/common" schemaLocation="common.xsd"/>
+  <xsd:complexType name="TokenWeight">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute name="weight" type="xsd:string" use="required"/>
+        <xsd:attribute name="token" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenWeight" type="tokenexpressions:TokenWeight"/>
+  <xsd:complexType name="TokenMultisetExpression">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="value" type="tokenexpressions:TokenMultiSet"/>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenMultisetExpression" type="tokenexpressions:TokenMultisetExpression"/>
+  <xsd:complexType name="TokenMultiSet">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="weight" type="tokenexpressions:TokenWeight"/>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenMultiSet" type="tokenexpressions:TokenMultiSet"/>
+  <xsd:complexType name="Variable">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="context" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Variable" type="tokenexpressions:Variable"/>
+  <xsd:complexType name="TokenVariadicExpression">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="monoms" type="tokenexpressions:Monom"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="monomConstants" type="tokenexpressions:MonomConstant"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenVariadicExpression" type="tokenexpressions:TokenVariadicExpression"/>
+  <xsd:complexType name="Monom">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute default="1" name="power" type="xsd:string" use="required"/>
+        <xsd:attribute name="variable" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Monom" type="tokenexpressions:Monom"/>
+  <xsd:complexType name="TokenExpressionBinding">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bindingTokens" type="tokenexpressions:TokenBinding"/>
+        </xsd:sequence>
+        <xsd:attribute name="expression" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenExpressionBinding" type="tokenexpressions:TokenExpressionBinding"/>
+  <xsd:complexType name="TokenBinding">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute name="variable" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenBinding" type="tokenexpressions:TokenBinding"/>
+  <xsd:complexType name="MonomConstant">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute default="1" name="power" type="xsd:string" use="required"/>
+        <xsd:attribute name="constant" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MonomConstant" type="tokenexpressions:MonomConstant"/>
+  <xsd:complexType name="NetConstant">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="binding" type="tokenexpressions:TokenBinding"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NetConstant" type="tokenexpressions:NetConstant"/>
+</xsd:schema>

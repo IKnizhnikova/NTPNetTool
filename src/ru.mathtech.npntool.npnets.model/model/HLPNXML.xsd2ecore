@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="npnets.ecore#//hlpn" outputs="HLPNXML.xsd#/">
+  <nested inputs="npnets.ecore#//hlpn" outputs="HLPNXML.xsd#/">
+    <nested inputs="npnets.ecore#//hlpn/HighLevelPetriNet" outputs="HLPNXML.xsd#//HighLevelPetriNet;XSDComplexTypeDefinition">
+      <nested inputs="npnets.ecore#//hlpn/HighLevelPetriNet/nodes" outputs="HLPNXML.xsd#//HighLevelPetriNet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="npnets.ecore#//hlpn/HighLevelPetriNet/arcs" outputs="HLPNXML.xsd#//HighLevelPetriNet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/ContextVariable/variables" outputs="HLPNXML.xsd#//HighLevelPetriNet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"/>
+    <nested inputs="npnets.ecore#//hlpn/HighLevelPetriNet" outputs="HLPNXML.xsd#//HighLevelPetriNet;XSDElementDeclaration"/>
+    <nested inputs="npnets.ecore#//hlpn/Place" outputs="HLPNXML.xsd#//Place;XSDComplexTypeDefinition=1">
+      <nested inputs="npnets.ecore#//hlpn/Place/outArcs" outputs="HLPNXML.xsd#//Place;XSDComplexTypeDefinition=1/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//hlpn/Place/inArcs" outputs="HLPNXML.xsd#//Place;XSDComplexTypeDefinition=1/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//hlpn/Place/type" outputs="HLPNXML.xsd#//Place;XSDComplexTypeDefinition=1/XSDAttributeUse=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/Place" outputs="HLPNXML.xsd#//Place;XSDElementDeclaration=1"/>
+    <nested inputs="npnets.ecore#//hlpn/Transition" outputs="HLPNXML.xsd#//Transition;XSDComplexTypeDefinition=2">
+      <nested inputs="npnets.ecore#//hlpn/Transition/inArcs" outputs="HLPNXML.xsd#//Transition;XSDComplexTypeDefinition=2/XSDAttributeUse=3"/>
+      <nested inputs="npnets.ecore#//hlpn/Transition/outArcs" outputs="HLPNXML.xsd#//Transition;XSDComplexTypeDefinition=2/XSDAttributeUse=4"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/Node/net" outputs="HLPNXML.xsd#//Transition;XSDComplexTypeDefinition=2/XSDAttributeUse=2"/>
+    <nested inputs="npnets.ecore#//hlpn/Transition" outputs="HLPNXML.xsd#//Transition;XSDElementDeclaration=2"/>
+    <nested inputs="npnets.ecore#//hlpn/ArcPT" outputs="HLPNXML.xsd#//ArcPT;XSDComplexTypeDefinition=3">
+      <nested inputs="npnets.ecore#//hlpn/ArcPT/source" outputs="HLPNXML.xsd#//ArcPT;XSDComplexTypeDefinition=3/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//hlpn/ArcPT/target" outputs="HLPNXML.xsd#//ArcPT;XSDComplexTypeDefinition=3/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//hlpn/ArcPT/inscription" outputs="HLPNXML.xsd#//ArcPT;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/ArcPT" outputs="HLPNXML.xsd#//ArcPT;XSDElementDeclaration=3"/>
+    <nested inputs="npnets.ecore#//hlpn/ArcTP" outputs="HLPNXML.xsd#//ArcTP;XSDComplexTypeDefinition=4">
+      <nested inputs="npnets.ecore#//hlpn/ArcTP/source" outputs="HLPNXML.xsd#//ArcTP;XSDComplexTypeDefinition=4/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//hlpn/ArcTP/target" outputs="HLPNXML.xsd#//ArcTP;XSDComplexTypeDefinition=4/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//hlpn/ArcTP/inscription" outputs="HLPNXML.xsd#//ArcTP;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/ArcTP" outputs="HLPNXML.xsd#//ArcTP;XSDElementDeclaration=4"/>
+    <nested inputs="npnets.ecore#//hlpn/ContextVariable" outputs="HLPNXML.xsd#//ContextVariable;XSDComplexTypeDefinition=5">
+      <nested inputs="npnets.ecore#//hlpn/ContextVariable/variables" outputs="HLPNXML.xsd#//ContextVariable;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/Node" outputs="HLPNXML.xsd#//Node;XSDComplexTypeDefinition=6">
+      <nested inputs="npnets.ecore#//hlpn/Node/net" outputs="HLPNXML.xsd#//Node;XSDComplexTypeDefinition=6/XSDAttributeUse"/>
+    </nested>
+    <nested inputs="npnets.ecore#//hlpn/Arc" outputs="HLPNXML.xsd#//Arc;XSDComplexTypeDefinition=7">
+      <nested inputs="npnets.ecore#//hlpn/Arc/net" outputs="HLPNXML.xsd#//Arc;XSDComplexTypeDefinition=7/XSDAttributeUse"/>
+    </nested>
+  </nested>
+  <nested inputs="npnets.ecore#//common/INetElement/name" outputs="HLPNXML.xsd#//Transition;XSDComplexTypeDefinition=2/XSDAttributeUse"/>
+  <nested inputs="npnets.ecore#//common/INetElement/comment" outputs="HLPNXML.xsd#//Transition;XSDComplexTypeDefinition=2/XSDAttributeUse=1"/>
+</xsd2ecore:XSD2EcoreMappingRoot>

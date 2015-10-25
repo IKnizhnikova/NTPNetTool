@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="npnets.ecore#//tokenexpressions" outputs="TokenExpressionsXML.xsd#/">
+  <nested inputs="npnets.ecore#//tokenexpressions" outputs="TokenExpressionsXML.xsd#/">
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenWeight" outputs="TokenExpressionsXML.xsd#//TokenWeight;XSDComplexTypeDefinition">
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenWeight/weight" outputs="TokenExpressionsXML.xsd#//TokenWeight;XSDComplexTypeDefinition/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenWeight/token" outputs="TokenExpressionsXML.xsd#//TokenWeight;XSDComplexTypeDefinition/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenWeight" outputs="TokenExpressionsXML.xsd#//TokenWeight;XSDElementDeclaration"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenMultisetExpression" outputs="TokenExpressionsXML.xsd#//TokenMultisetExpression;XSDComplexTypeDefinition=1">
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenMultisetExpression/type"
+          outputs="TokenExpressionsXML.xsd#//TokenMultisetExpression;XSDComplexTypeDefinition=1/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenMultisetExpression/value"
+          outputs="TokenExpressionsXML.xsd#//TokenMultisetExpression;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenMultisetExpression" outputs="TokenExpressionsXML.xsd#//TokenMultisetExpression;XSDElementDeclaration=1"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenMultiSet" outputs="TokenExpressionsXML.xsd#//TokenMultiSet;XSDComplexTypeDefinition=2">
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenMultiSet/weight" outputs="TokenExpressionsXML.xsd#//TokenMultiSet;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenMultiSet/type" outputs="TokenExpressionsXML.xsd#//TokenMultiSet;XSDComplexTypeDefinition=2/XSDAttributeUse"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenMultiSet" outputs="TokenExpressionsXML.xsd#//TokenMultiSet;XSDElementDeclaration=2"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/Variable" outputs="TokenExpressionsXML.xsd#//Variable;XSDComplexTypeDefinition=3">
+      <nested inputs="npnets.ecore#//tokenexpressions/Variable/name" outputs="TokenExpressionsXML.xsd#//Variable;XSDComplexTypeDefinition=3/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/Variable/context" outputs="TokenExpressionsXML.xsd#//Variable;XSDComplexTypeDefinition=3/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/Variable" outputs="TokenExpressionsXML.xsd#//Variable;XSDElementDeclaration=3"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenVariadicExpression" outputs="TokenExpressionsXML.xsd#//TokenVariadicExpression;XSDComplexTypeDefinition=4">
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenVariadicExpression/monoms"
+          outputs="TokenExpressionsXML.xsd#//TokenVariadicExpression;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenVariadicExpression/monomConstants"
+          outputs="TokenExpressionsXML.xsd#//TokenVariadicExpression;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenVariadicExpression" outputs="TokenExpressionsXML.xsd#//TokenVariadicExpression;XSDElementDeclaration=4"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/Monom" outputs="TokenExpressionsXML.xsd#//Monom;XSDComplexTypeDefinition=5">
+      <nested inputs="npnets.ecore#//tokenexpressions/Monom/power" outputs="TokenExpressionsXML.xsd#//Monom;XSDComplexTypeDefinition=5/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/Monom/variable" outputs="TokenExpressionsXML.xsd#//Monom;XSDComplexTypeDefinition=5/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/Monom" outputs="TokenExpressionsXML.xsd#//Monom;XSDElementDeclaration=5"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenExpressionBinding" outputs="TokenExpressionsXML.xsd#//TokenExpressionBinding;XSDComplexTypeDefinition=6">
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenExpressionBinding/expression"
+          outputs="TokenExpressionsXML.xsd#//TokenExpressionBinding;XSDComplexTypeDefinition=6/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenExpressionBinding/bindingTokens"
+          outputs="TokenExpressionsXML.xsd#//TokenExpressionBinding;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenExpressionBinding" outputs="TokenExpressionsXML.xsd#//TokenExpressionBinding;XSDElementDeclaration=6"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenBinding" outputs="TokenExpressionsXML.xsd#//TokenBinding;XSDComplexTypeDefinition=7">
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenBinding/variable" outputs="TokenExpressionsXML.xsd#//TokenBinding;XSDComplexTypeDefinition=7/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/TokenBinding/value" outputs="TokenExpressionsXML.xsd#//TokenBinding;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/TokenBinding" outputs="TokenExpressionsXML.xsd#//TokenBinding;XSDElementDeclaration=7"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/MonomConstant" outputs="TokenExpressionsXML.xsd#//MonomConstant;XSDComplexTypeDefinition=8">
+      <nested inputs="npnets.ecore#//tokenexpressions/MonomConstant/power" outputs="TokenExpressionsXML.xsd#//MonomConstant;XSDComplexTypeDefinition=8/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/MonomConstant/constant" outputs="TokenExpressionsXML.xsd#//MonomConstant;XSDComplexTypeDefinition=8/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//tokenexpressions/MonomConstant/value" outputs="TokenExpressionsXML.xsd#//MonomConstant;XSDComplexTypeDefinition=8/XSDAttributeUse=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/MonomConstant" outputs="TokenExpressionsXML.xsd#//MonomConstant;XSDElementDeclaration=8"/>
+    <nested inputs="npnets.ecore#//tokenexpressions/NetConstant" outputs="TokenExpressionsXML.xsd#//NetConstant;XSDComplexTypeDefinition=9">
+      <nested inputs="npnets.ecore#//tokenexpressions/NetConstant/binding" outputs="TokenExpressionsXML.xsd#//NetConstant;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//tokenexpressions/NetConstant" outputs="TokenExpressionsXML.xsd#//NetConstant;XSDElementDeclaration=9"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

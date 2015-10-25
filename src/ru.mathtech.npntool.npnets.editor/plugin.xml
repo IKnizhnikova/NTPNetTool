@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ru.mathtech.npntool.npnets.highlevelnets.marking.presentation.MarkingEditorID"
+            name="%_UI_MarkingEditor_label"
+            icon="icons/full/obj16/MarkingModelFile.gif"
+            extensions="marking"
+            class="ru.mathtech.npntool.npnets.highlevelnets.marking.presentation.MarkingEditor"
+            contributorClass="ru.mathtech.npntool.npnets.highlevelnets.marking.presentation.MarkingActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ru.mathtech.npntool.npnets.highlevelnets.tokentypes.presentation.TokenTypesEditorID"
+            name="%_UI_TokenTypesEditor_label"
+            icon="icons/full/obj16/TokenTypesModelFile.gif"
+            extensions="tokentypes"
+            class="ru.mathtech.npntool.npnets.highlevelnets.tokentypes.presentation.TokenTypesEditor"
+            contributorClass="ru.mathtech.npntool.npnets.highlevelnets.tokentypes.presentation.TokenTypesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ru.mathtech.npntool.npnets.highlevelnets.tokenexpressions.presentation.TokenExpressionsEditorID"
+            name="%_UI_TokenExpressionsEditor_label"
+            icon="icons/full/obj16/TokenExpressionsModelFile.gif"
+            extensions="tokenexpressions"
+            class="ru.mathtech.npntool.npnets.highlevelnets.tokenexpressions.presentation.TokenExpressionsEditor"
+            contributorClass="ru.mathtech.npntool.npnets.highlevelnets.tokenexpressions.presentation.TokenExpressionsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ru.mathtech.npntool.npnets.highlevelnets.hlpn.presentation.HLPNEditorID"
+            name="%_UI_HLPNEditor_label"
+            icon="icons/full/obj16/HLPNModelFile.gif"
+            extensions="hlpn"
+            class="ru.mathtech.npntool.npnets.highlevelnets.hlpn.presentation.HLPNEditor"
+            contributorClass="ru.mathtech.npntool.npnets.highlevelnets.hlpn.presentation.HLPNActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.presentation.NPNetsModelWizardID"
+            name="%_UI_NPNetsModelWizard_label"
+            class="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.presentation.NPNetsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/NPNetsModelFile.gif">
+         <description>%_UI_NPNetsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.presentation.NPNetsEditorID"
+            name="%_UI_NPNetsEditor_label"
+            icon="icons/full/obj16/NPNetsModelFile.gif"
+            extensions="npnets"
+            class="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.presentation.NPNetsEditor"
+            contributorClass="ru.mathtech.npntool.npnets.highlevelnets.npnets.model.presentation.NPNetsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ru.mathtech.npntool.npnets.npndiagrams.presentation.NPNDiagramsEditorID"
+            name="%_UI_NPNDiagramsEditor_label"
+            icon="icons/full/obj16/NPNDiagramsModelFile.gif"
+            extensions="npndiagrams"
+            class="ru.mathtech.npntool.npnets.npndiagrams.presentation.NPNDiagramsEditor"
+            contributorClass="ru.mathtech.npntool.npnets.npndiagrams.presentation.NPNDiagramsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

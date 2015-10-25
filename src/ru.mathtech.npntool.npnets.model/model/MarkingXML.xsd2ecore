@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="npnets.ecore#//marking" outputs="MarkingXML.xsd#/">
+  <nested inputs="npnets.ecore#//marking" outputs="MarkingXML.xsd#/">
+    <nested inputs="npnets.ecore#//marking/Marking" outputs="MarkingXML.xsd#//Marking;XSDComplexTypeDefinition">
+      <nested inputs="npnets.ecore#//marking/Marking/map" outputs="MarkingXML.xsd#//Marking;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//marking/Marking" outputs="MarkingXML.xsd#//Marking;XSDElementDeclaration"/>
+    <nested inputs="npnets.ecore#//marking/PlaceMarking" outputs="MarkingXML.xsd#//PlaceMarking;XSDComplexTypeDefinition=1">
+      <nested inputs="npnets.ecore#//marking/PlaceMarking/place" outputs="MarkingXML.xsd#//PlaceMarking;XSDComplexTypeDefinition=1/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//marking/PlaceMarking/marking" outputs="MarkingXML.xsd#//PlaceMarking;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//marking/PlaceMarking" outputs="MarkingXML.xsd#//PlaceMarking;XSDElementDeclaration=1"/>
+    <nested inputs="npnets.ecore#//marking/HighLevelPetriNetMarked" outputs="MarkingXML.xsd#//HighLevelPetriNetMarked;XSDComplexTypeDefinition=2">
+      <nested inputs="npnets.ecore#//marking/HighLevelPetriNetMarked/net" outputs="MarkingXML.xsd#//HighLevelPetriNetMarked;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//marking/HighLevelPetriNetMarked/marking" outputs="MarkingXML.xsd#//HighLevelPetriNetMarked;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//marking/HighLevelPetriNetMarked" outputs="MarkingXML.xsd#//HighLevelPetriNetMarked;XSDElementDeclaration=2"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

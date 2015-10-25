@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:common="http:/mathtech.ru/npntool/common" xmlns:hlpn="mathtech.ru/npntool/hlpn" xmlns:marking="http://mathtech.ru/npntool/nets/marking" xmlns:tokentypes="http://mathtech.ru/npntool/nets/tokentypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mathtech.ru/npntool/nets/tokentypes">
+  <xsd:import namespace="http://mathtech.ru/npntool/nets/marking" schemaLocation="marking.xsd"/>
+  <xsd:import namespace="mathtech.ru/npntool/hlpn" schemaLocation="hlpn.xsd"/>
+  <xsd:import namespace="http:/mathtech.ru/npntool/common" schemaLocation="common.xsd"/>
+  <xsd:complexType abstract="true" name="TokenType">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TokenTypeAtomic">
+    <xsd:complexContent>
+      <xsd:extension base="tokentypes:TokenType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="instance" type="tokentypes:Atom"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="atom" type="tokentypes:TokenAtomic"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenTypeAtomic" type="tokentypes:TokenTypeAtomic"/>
+  <xsd:complexType name="TokenTypeElementNet">
+    <xsd:complexContent>
+      <xsd:extension base="tokentypes:TokenType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="elementNetMarkeds" type="tokentypes:ElementNetMarked"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="net" type="hlpn:HighLevelPetriNet"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tokenNets" type="tokentypes:TokenNet"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenTypeElementNet" type="tokentypes:TokenTypeElementNet"/>
+  <xsd:complexType abstract="true" name="Token">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="attribute" type="tokentypes:TokenAttribute"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TokenAtomic">
+    <xsd:complexContent>
+      <xsd:extension base="tokentypes:Token">
+        <xsd:attribute name="type" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenAtomic" type="tokentypes:TokenAtomic"/>
+  <xsd:complexType name="TokenNet">
+    <xsd:complexContent>
+      <xsd:extension base="tokentypes:Token">
+        <xsd:attribute name="type" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenNet" type="tokentypes:TokenNet"/>
+  <xsd:complexType name="TokenAttribute">
+    <xsd:complexContent>
+      <xsd:extension base="common:IEntityIdentifiable">
+        <xsd:attribute name="type" type="xsd:string"/>
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TokenAttribute" type="tokentypes:TokenAttribute"/>
+  <xsd:complexType name="ElementNetMarked">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="marking" type="marking:Marking"/>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ElementNetMarked" type="tokentypes:ElementNetMarked"/>
+  <xsd:complexType name="Atom">
+    <xsd:complexContent>
+      <xsd:extension base="common:INetElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Atom" type="tokentypes:Atom"/>
+</xsd:schema>

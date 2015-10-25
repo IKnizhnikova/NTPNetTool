@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="npnets.ecore#//npndiagrams" outputs="NPNDiagramsXML.xsd#/">
+  <nested inputs="npnets.ecore#//npndiagrams" outputs="NPNDiagramsXML.xsd#/">
+    <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNPNMarked" outputs="NPNDiagramsXML.xsd#//NPNDiagramNPNMarked;XSDComplexTypeDefinition">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNPNMarked/diagramNetSystem"
+          outputs="NPNDiagramsXML.xsd#//NPNDiagramNPNMarked;XSDComplexTypeDefinition/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNPNMarked/model" outputs="NPNDiagramsXML.xsd#//NPNDiagramNPNMarked;XSDComplexTypeDefinition/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNPNMarked" outputs="NPNDiagramsXML.xsd#//NPNDiagramNPNMarked;XSDElementDeclaration"/>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNetSystem" outputs="NPNDiagramsXML.xsd#//NPNDiagramNetSystem;XSDComplexTypeDefinition=1">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNetSystem/model" outputs="NPNDiagramsXML.xsd#//NPNDiagramNetSystem;XSDComplexTypeDefinition=1/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNetSystem/nodes" outputs="NPNDiagramsXML.xsd#//NPNDiagramNetSystem;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNetSystem/arcs" outputs="NPNDiagramsXML.xsd#//NPNDiagramNetSystem;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNDiagramNetSystem" outputs="NPNDiagramsXML.xsd#//NPNDiagramNetSystem;XSDElementDeclaration=1"/>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolPlaceSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolPlaceSN;XSDComplexTypeDefinition=2">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolPlaceSN/outArcs" outputs="NPNDiagramsXML.xsd#//NPNSymbolPlaceSN;XSDComplexTypeDefinition=2/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolPlaceSN/inArcs" outputs="NPNDiagramsXML.xsd#//NPNSymbolPlaceSN;XSDComplexTypeDefinition=2/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolPlaceSN/tokens" outputs="NPNDiagramsXML.xsd#//NPNSymbolPlaceSN;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolPlaceSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolPlaceSN;XSDElementDeclaration=2"/>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTransitionSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolTransitionSN;XSDComplexTypeDefinition=3">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTransitionSN/outArcs" outputs="NPNDiagramsXML.xsd#//NPNSymbolTransitionSN;XSDComplexTypeDefinition=3/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTransitionSN/inArcs" outputs="NPNDiagramsXML.xsd#//NPNSymbolTransitionSN;XSDComplexTypeDefinition=3/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTransitionSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolTransitionSN;XSDElementDeclaration=3"/>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcPTSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcPTSN;XSDComplexTypeDefinition=4">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcPTSN/target" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcPTSN;XSDComplexTypeDefinition=4/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcPTSN/source" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcPTSN;XSDComplexTypeDefinition=4/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcPTSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcPTSN;XSDElementDeclaration=4"/>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcTPSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcTPSN;XSDComplexTypeDefinition=5">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcTPSN/target" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcTPSN;XSDComplexTypeDefinition=5/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcTPSN/source" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcTPSN;XSDComplexTypeDefinition=5/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcTPSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcTPSN;XSDElementDeclaration=5"/>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolNodeSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolNodeSN;XSDComplexTypeDefinition=6">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolNodeSN/constraints" outputs="NPNDiagramsXML.xsd#//NPNSymbolNodeSN;XSDComplexTypeDefinition=6/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolNodeSN/diagram" outputs="NPNDiagramsXML.xsd#//NPNSymbolNodeSN;XSDComplexTypeDefinition=6/XSDAttributeUse=1"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolNodeSN/model" outputs="NPNDiagramsXML.xsd#//NPNSymbolNodeSN;XSDComplexTypeDefinition=6/XSDAttributeUse=2"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcSN;XSDComplexTypeDefinition=7">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcSN/bendpoints" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcSN;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcSN/diagram" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcSN;XSDComplexTypeDefinition=7/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolArcSN/model" outputs="NPNDiagramsXML.xsd#//NPNSymbolArcSN;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTokenSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolTokenSN;XSDComplexTypeDefinition=8">
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTokenSN/constraints" outputs="NPNDiagramsXML.xsd#//NPNSymbolTokenSN;XSDComplexTypeDefinition=8/XSDAttributeUse"/>
+      <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTokenSN/place" outputs="NPNDiagramsXML.xsd#//NPNSymbolTokenSN;XSDComplexTypeDefinition=8/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="npnets.ecore#//npndiagrams/NPNSymbolTokenSN" outputs="NPNDiagramsXML.xsd#//NPNSymbolTokenSN;XSDElementDeclaration=6"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>
